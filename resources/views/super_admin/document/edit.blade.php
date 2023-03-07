@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{ asset('css/validator.css') }}">
 @endpush
 @section('content')
-    <h4>Create Document</h4> <br />
+    <h4>Update Document</h4> <br />
 
     {{--  Message  --}}
     @if ($errors->any())
@@ -16,16 +16,16 @@
         </div>
     @endif
 
-
-    <form id="form-1" action="{{ route('super_admin.document.store') }}" method="POST">
+    <form id="form-1" action="{{ route('super_admin.document.update', $document) }}" method="POST">
         @csrf
+        @method('PUT')
         <div class="form-group">
             <label for="name">DocsName</label>
-            <input type="text" class="form-control" id="name" name="name"  placeholder="Enter DocsName" />
+            <input value="{{ $document->name }}" type="text" class="form-control" id="name" name="name"  placeholder="Enter DocsName" />
             <span class="form-message"></span>
         </div>
         <br />
-        <button type="submit" class="btn btn-success">Insert</button>
+        <button type="submit" class="btn btn-success">Update</button>
         <a class="btn btn-danger" href="{{ route('super_admin.document.index') }}">Cancel</a>
     </form>
 @endsection

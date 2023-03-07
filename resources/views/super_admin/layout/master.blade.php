@@ -90,6 +90,20 @@
     <div class="content-body">
         <!-- row -->
         <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item active">{{ $title }}</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div> <br />
+            <!-- end page title -->
+
             @yield('content')
         </div>
     </div>
