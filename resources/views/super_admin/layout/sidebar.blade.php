@@ -21,7 +21,7 @@
                     <span class="nav-text">Documents</span>
                 </a>
             </li>
-            <li><a href="javascript:void()" aria-expanded="false">
+            <li><a href="{{ route('super_admin.user.index') }}" aria-expanded="false">
                     <i class="flaticon-041-graph"></i>
                     <span class="nav-text">Users</span>
                 </a>

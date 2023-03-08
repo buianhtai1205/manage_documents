@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\SuperAdmin\DocumentController;
 use App\Http\Controllers\SuperAdmin\SuperAdminController;
+use App\Http\Controllers\SuperAdmin\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,4 +30,14 @@ Route::group(['prefix' => '/super-admin/document', 'as' => 'super_admin.document
     Route::get('/{document}/edit', [DocumentController::class, 'edit'])->name('edit');
     Route::put('/{document}', [DocumentController::class, 'update'])->name('update');
     Route::delete('/{document}', [DocumentController::class, 'destroy'])->name('destroy');
+});
+
+Route::group(['prefix' => '/super-admin/user', 'as' => 'super_admin.user.'], function() {
+    Route::get('/', [UserController::class, 'index'])->name('index');
+    Route::get('/create', [UserController::class, 'create'])->name('create');
+    Route::post('/store', [UserController::class, 'store'])->name('store');
+    Route::get('/{user}', [UserController::class, 'show'])->name('show');
+    Route::get('/{user}/edit', [UserController::class, 'edit'])->name('edit');
+    Route::put('/{user}', [UserController::class, 'update'])->name('update');
+    Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
 });
